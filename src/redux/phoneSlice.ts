@@ -18,7 +18,7 @@ export const fetchProduct = createAsyncThunk(
   'product/fetchProduct',
   async (id: string, thunkAPI) => {
     try {
-      const response = await axios.get(`http://localhost:5000/api/products/${id}`);
+      const response = await axios.get(`https://new-net-back.onrender.com/api/products/${id}`);
       const data = response.data
       return {
         name: data.product.name,

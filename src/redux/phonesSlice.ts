@@ -33,7 +33,7 @@ export const fetchAllProducts = createAsyncThunk<
   'product/fetchAllProducts',
   async (_, thunkAPI) => {
     try {
-      const response = await axios.get<Phone[]>('http://localhost:5000/api/phones');
+      const response = await axios.get<Phone[]>('https://new-net-back.onrender.com/api/phones');
       return response.data;
     } catch (error: any) {
       return thunkAPI.rejectWithValue(error.message);

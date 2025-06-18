@@ -5,7 +5,7 @@ import { useDispatch } from "react-redux";
 export const notifyProduct = createAsyncThunk<void, string>(
   "notify/notifyProduct",
   async (productId) => {
-    const res = await fetch("http://localhost:5000/api/notify", {
+    const res = await fetch("https://new-net-back.onrender.com/api/notify", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ productId }),

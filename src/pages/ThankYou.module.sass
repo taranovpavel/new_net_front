@@ -1,0 +1,43 @@
+.BackGround
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 12
+  width: 100%
+  height: 100vh
+.Main
+  background-color: #00000066
+  z-index: 1
+  width: 100%
+  height: 100vh
+  position: absolute
+  top: 0
+  transition: 0.3s  
+.MainWrapper
+  background-color: #fff
+  padding: 60px
+  display: flex
+  position: absolute
+  top: 50%
+  left: 50%
+  transform: translate(-50%, -50%)
+  border-radius: 32px
+  flex-direction: column
+  gap: 24px
+  width: 500px
+  z-index: 15
+  text-align: center
+  .Button
+    width: 100%
+    padding: 11px 22px
+    border-radius: 32px
+    color: #06c 
+    border: solid 1px #06c
+    background-color: #00000000 
+    transition: 0.2s
+    cursor: pointer
+    font-size: 16px
+    text-align: center
+    &:hover
+      background-color: #06c
+      color: #fff

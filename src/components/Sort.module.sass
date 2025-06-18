@@ -1,0 +1,58 @@
+.Main,.MainBlock
+  display: flex
+  flex-direction: column
+.Main
+  gap: 12px
+  &Block
+    gap: 12px
+    &Label
+      font-weight: 700
+    &Checks
+      label
+       display: flex
+       align-items: center
+       gap: 8px
+       cursor: pointer
+       position: relative
+       padding-left: 28px
+       user-select: none
+       input
+         position: absolute
+         opacity: 0
+         cursor: pointer
+         height: 0
+         width: 0
+         &:checked ~ span
+           background-color: #06c
+           border-color: #06c
+           &:after
+             display: block
+      span
+        position: absolute
+        left: 0
+        height: 20px
+        width: 20px
+        border: 2px solid #ccc
+        border-radius: 4px
+        transition: all 0.2s
+        &:after
+          content: ""
+          position: absolute
+          display: none
+          top: 0.5px
+          left: 5px
+          width: 5px
+          height: 10px
+          border: solid #fff
+          border-width: 0 2px 2px 0
+          transform: rotate(45deg)
+  &Price
+    display: flex
+    gap: 12px
+    align-items: center
+    input
+      width: 100px
+      font-size: 14px
+      border: 1px solid #000
+      padding: 6px 10px
+      border-radius: 32px        

@@ -1,0 +1,57 @@
+.Main,.MainTop
+  display: flex
+  flex-direction: column
+.Main
+  width: 460px
+  height: 440px
+  background-color: #eee
+  padding: 20px 20px 0 
+  justify-content: space-between
+  overflow: hidden
+  border-radius: 28px
+  position: relative
+  aspect-ratio: 16 / 9
+  &Top
+    gap: 12px
+    align-items: center
+    z-index: 2
+    &Label
+      font-size: 42px
+      font-weight: 700
+    &Btn
+      display: flex
+      align-items: center
+      gap: 6px
+      font-size: 16px
+      border: none
+      background-color: #00000000  
+      cursor: pointer
+      color: #06c  
+      &Text
+        font-size: 16px
+      &Arrow
+        width: 22px
+        height: 18px
+        position: relative
+        overflow: hidden
+        &Inner
+          font-size: 18px 
+          width: 44px
+          position: absolute
+          top: 50%
+          right: 0
+          transform: translate(0, -50%)
+          transition: 0.3s
+      &:hover
+        .MainTopBtnArrowInner
+          right: -22px
+  &Bottom
+    position: absolute
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    width: 600px 
+    height: 420px   
+    bottom: 0
+    left: 50%
+    transform: translateX(-50%)

@@ -1,0 +1,139 @@
+.Wrapper
+  display: flex
+  flex-direction: column
+  gap: 40px
+.Main
+  &LocalHeader
+    display: flex
+    justify-content: space-between
+    padding: 20px 0
+    align-items: center
+    p
+      font-size: 32px
+      font-weight: 700
+    &Button
+      width: auto
+      padding: 0 8px
+      border-radius: 100%
+      color: #06c 
+      border: solid 1px #06c
+      background-color: #00000000 
+      transition: 0.2s
+      cursor: pointer
+      font-size: 24px
+      &:hover
+        background-color: #06c
+        color: #fff 
+  &Inner
+    display: flex
+    justify-content: space-between
+    &Left,&LeftInputs,&LeftInputsInput
+      display: flex
+      flex-direction: column
+    &Left
+      width: 600px
+      gap: 24px
+      &Inputs
+        gap: 12px
+        &Input
+          gap: 4px
+          &Label
+            font-weight: 700
+          &Inner
+            &Input
+              &Success,&Error
+                width: 100%
+                padding: 14px 20px
+                border-radius: 40px
+                transition: 0.3s
+                font-size: 16px
+              &Success  
+                border: 2px solid #4caf50
+              &Error  
+                border: 2px solid #ba000d
+            &HelperText
+              font-size: 12px
+              color: #ba000d
+              font-weight: 700   
+      &Radio,&RadioInner
+        display: flex
+        flex-direction: column 
+      &Radio
+        gap: 4px
+        &Label
+          font-weight: 700
+        &Inner
+          gap: 6px
+          label
+            display: flex
+            gap: 6px
+            font-size: 16px
+      &Button
+        width: 100%
+        padding: 14px 20px
+        border-radius: 32px
+        color: #06c 
+        border: solid 1px #06c
+        background-color: #00000000 
+        transition: 0.2s
+        cursor: pointer
+        font-size: 16px
+        text-align: center
+        &:hover
+          background-color: #06c
+          color: #fff    
+    &Right
+      display: flex
+      flex-direction: column
+      gap: 20px
+      width: 500px
+      &Items
+        display: flex
+        flex-direction: column
+        gap: 12px
+        &Item
+          display: flex
+          justify-content: space-between
+          align-items: center
+          padding: 12px 0
+          &Image
+            width: 100px
+            height: 100px
+            background-position: center
+            background-repeat: no-repeat
+            background-size: cover
+          &Info
+            width: 200px
+            display: flex
+            flex-direction: column
+            gap: 3px
+            &Label
+              font-weight: 700
+            &Text 
+          &Buttons
+            display: flex
+            gap: 12px
+            align-items: center
+            p 
+              font-weight: 700
+          &Right
+            display: flex
+            gap: 12px
+            &Price
+              font-weight: 700
+            button  
+              width: auto
+              border-radius: 100%
+              padding: 0 6px
+              color: #06c 
+              border: solid 1px #06c
+              background-color: #00000000 
+              transition: 0.2s
+              cursor: pointer
+              font-size: 18px
+              &:hover
+                background-color: #06c
+                color: #fff    
+      &Price
+        font-size: 18px
+        font-weight: 700              

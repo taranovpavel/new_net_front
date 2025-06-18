@@ -1,0 +1,48 @@
+@use '../Style/_variables' as *;
+.Main,.MainInfo,.MainInfoInner
+  display: flex
+  flex-direction: column
+.Main
+  width: $CardWidth
+  height: 430px
+  background-color: #eee
+  padding: 20px 20px 30px 
+  justify-content: space-between
+  overflow: hidden
+  border-radius: 28px
+  aspect-ratio: 16 / 9
+  cursor: pointer
+  &Info
+    gap: 12px
+    align-items: center
+    z-index: 2
+    &Inner
+      gap: 6px
+      align-items: center
+      &Name
+        font-size: 24px 
+        font-weight: 700
+      &Price
+        font-size: 18px 
+        font-weight: 700
+    button
+      width: min-content
+      padding: 11px 21px
+      border-radius: 32px
+      color: #06c 
+      border: solid 1px #06c
+      background-color: #00000000 
+      transition: 0.2s
+      cursor: pointer
+      font-size: 14px
+      &:hover
+        background-color: #06c
+        color: #fff
+  &Photo
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    transition: 0.3s
+    width: 100%
+    height: 260px
+    bottom: 0

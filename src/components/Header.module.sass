@@ -1,0 +1,69 @@
+.Main 
+  width: 100%
+  font-size: 16px
+  color: #000
+  font-size: 14px
+  padding: 0 0 40px 0
+  &TopWrapper
+    background-color: #eee
+  &Top,&Bottom
+    width: 1480px
+    margin: 0 auto
+  &Top
+    padding: 10px 0
+    display: flex
+    justify-content: space-between
+    align-items: center
+    &Left,&Center,&Right,&RightLinks
+      display: flex
+      align-items: center
+    &Left  
+      gap: 6px
+    &Center
+      gap: 30px    
+    &Right
+      gap: 30px
+      &Links
+        gap: 8px
+  &Bottom
+    display: flex
+    justify-content: space-between
+    align-items: center
+    padding: 10px 0
+    position: relative
+    &Center,&Right,&CenterTab,&RightCount
+      display: flex
+      align-items: center
+    &Left,&Right
+      padding: 24px 0 0  
+    &Left
+      font-size: 24px
+      font-weight: 700
+    &Center
+      position: absolute
+      top: 80%
+      left: 50%
+      transform: translate(-50%, -50%)
+      gap: 64px
+      &Tab
+        flex-direction: column
+        gap: 6px
+        svg
+          height: 42px
+    &Right  
+      gap: 6px
+      &Icon
+        width: 20px
+        height: 20px
+        cursor: pointer
+      &Count
+        background-color: #000
+        color: #fff
+        width: 20px
+        height: 20px
+        border-radius: 100%
+        justify-content: center
+        font-size: 14px
+          
+
+

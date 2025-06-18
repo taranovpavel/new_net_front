@@ -1,0 +1,44 @@
+.Main,.MainTopRightArray,.MainTopLeft,.MainTopLeftInner
+  display: flex
+  flex-direction: column
+  gap: 8px  
+.Main
+  background-color: #eee
+  padding: 20px 60px
+  gap: 18px
+  &Top,&Line,&Bottom
+    margin: 0 auto
+    width: 1480px
+  &Top
+    display: flex
+    justify-content: space-between
+    &Label
+      font-weight: 700
+    &LeftInner
+      gap: 0px
+      &Logo
+        font-size: 24px
+        font-weight: 700  
+      &Text
+        font-size: 14px  
+    &Right
+      display: flex
+      gap: 100px
+      &Array
+        &Icon
+          width: 20px
+          height: 20px
+        &WIcon
+          display: flex
+          gap: 6px
+          align-items: center      
+  &Line
+    height: 2px
+    background-color: #555
+  &Bottom
+    display: flex
+    justify-content: space-between
+    font-size: 12px
+    &Center
+      display: flex
+      gap: 24px

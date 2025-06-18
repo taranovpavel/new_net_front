@@ -1,0 +1,35 @@
+.Main
+  width: 100%
+  height: 50vh
+  &Card,&CardInner
+    display: flex
+    align-items: center
+  &Card
+    width: 100%
+    height: 50vh
+    background-color: #222
+    border-radius: 28px
+    flex-direction: column
+    padding: 24px 0 0
+    background-position: center
+    background-repeat: no-repeat
+    background-size: cover
+    &Inner
+      flex-direction: column
+      gap: 12px
+      p
+        font-size: 54px
+        font-weight: 700
+      button
+        width: min-content
+        padding: 11px 21px
+        border-radius: 32px
+        color: #06c 
+        border: solid 1px #06c
+        background-color: #00000000 
+        transition: 0.2s
+        cursor: pointer
+        font-size: 16px
+        &:hover
+          background-color: #06c
+          color: #fff

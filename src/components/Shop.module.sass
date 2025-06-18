@@ -1,0 +1,16 @@
+@use '../Style/_variables' as *;
+.Main
+  display: flex
+  flex-direction: column
+  gap: 10px
+  width: 100%
+  padding: 40px 0
+  &Inner
+    width: 100%
+    display: flex
+    justify-content: space-between
+    &Right
+      width: $CardWidth*4+20*3
+      display: flex
+      flex-wrap: wrap
+      gap: 20px

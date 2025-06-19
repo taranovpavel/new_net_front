@@ -10,6 +10,7 @@ import { fetchProduct } from '../redux/phoneSlice';
 import { AppDispatch, RootState } from '../redux';
 import { useParams } from 'react-router-dom';
 import ModalPage from './ModalPage';
+import Loader from '../components/Loader';
 
 const ProductPage = () => {
   const { id } = useParams<{ id: string }>();
@@ -24,15 +25,15 @@ const ProductPage = () => {
 
 
   return (
-    <>
+    <div className={classes.Wrapper}>
       <Header />
       <Container>
         <div className={classes.Main}>
-          {loading && <p>Загрузка...</p>}
+          {loading && <Loader/>}
 
           {!loading && error && <p>Ошибка загрузки товара</p>}
 
-          {!loading && product && id &&(
+          {!loading && !error && product && id &&(
             <>
               {product.images && <ProductSwiper images={product.images} />}
               <ProductInfo item={product} id={Number(id)}/>
@@ -46,7 +47,7 @@ const ProductPage = () => {
         :
         ""
       }
-    </>
+    </div>
   );
 };
 

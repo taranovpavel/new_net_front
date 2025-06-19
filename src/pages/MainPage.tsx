@@ -7,47 +7,54 @@ import Card from '../components/Card';
 import CardVideo from '../components/CardVideo';
 import Footer from '../components/Footer';
 import ModalPage from './ModalPage';
-import { useSelector } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../redux';
+import Loader from '../components/Loader';
+import { setSortBrand } from '../redux/cartSlice';
 
 const MainPage = () => {
+  const dispatch = useDispatch()
   const isModal = useSelector((state: RootState) => state.cart.isModal);
   const cardsVideo = [
     {
       title: "iPhone",
       text: "Выбать модель",
-      video: "https://www.apple.com/105/media/us/iphone/family/2025/e7ff365a-cb59-4ce9-9cdf-4cb965455b69/anim/welcome/xlarge_2x.mp4"
+      video: "https://www.apple.com/105/media/us/iphone/family/2025/e7ff365a-cb59-4ce9-9cdf-4cb965455b69/anim/welcome/xlarge_2x.mp4",
+      brand: "apple"
     },
     {
       title: "Samsung",
       text: "Выбать модель",
-      video: "https://images.samsung.com/is/content/samsung/assets/ru/ux3/home/Hero_KV_Home_PC_1920x1080.mp4"
+      video: "https://images.samsung.com/is/content/samsung/assets/ru/ux3/home/Hero_KV_Home_PC_1920x1080.mp4",
+      brand: "samsung"
     },
     {
       title: "Xiaomi",
       text: "Выбать модель",
-      video: "https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15-ultra/pc/erwsdxcftgvyhb.mp4"
+      video: "https://i02.appmifile.com/mi-com-product/fly-birds/xiaomi-15-ultra/pc/erwsdxcftgvyhb.mp4",
+      brand: "xiaomi"
     },
   ]
   const cards = [
     {
       title: "Наушники",
-      text: "Выбать модель",
-      img: "https://static.tildacdn.one/tild3538-3466-4333-a363-356632653430/all-airpodsmin.png"
+      text: "Посмотреть",
+      img: "https://pngimg.com/uploads/airPods/airPods_PNG6.png"
     },
     {
       title: "Часы",
-      text: "Выбать модель",
-      img: "https://static.tildacdn.one/tild3737-3164-4337-a536-306162623261/all-watchesmin.png"
+      text: "Посмотреть",
+      img: "https://purepng.com/public/uploads/large/apple-watch-pcq.png"
     },
     {
       title: "Другое",
       text: "Посмотреть",
-      img: "https://assets.xboxservices.com/assets/13/c9/13c9e42e-7802-4437-be3d-e694ae180578.jpg?n=999666_Content-Placement-0_Accessory-hub_740x417.jpg"
+      img: "https://purepng.com/public/uploads/large/purepng.com-gamepadgamepadgame-controlhandheld-controllervideo-games-controller-1701528353499nhgz5.png"
     },
   ]
+  dispatch(setSortBrand("none"))
   return (
-    <>
+    <div className={classes.Wrapper}>
       <Header/>
       <Container>
         <SwiperModul/>
@@ -58,6 +65,7 @@ const MainPage = () => {
               title={item.title}
               text={item.text}
               video={item.video}
+              brand={item.brand}
             />        
           )}
           {cards.map((item,idx)=>
@@ -79,7 +87,7 @@ const MainPage = () => {
         :
         ""
       }
-    </>
+    </div>
   );
 };
 

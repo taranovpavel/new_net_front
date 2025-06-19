@@ -12,7 +12,8 @@ export type Item = {
 
 type StateType = {
   items: Item[];
-  isModal: boolean
+  isModal: boolean;
+  sortBrand: string;
 };
 
 const loadFromStorage = (): Item[] => {
@@ -30,7 +31,8 @@ const saveToStorage = (items: Item[]) => {
 
 const initialState: StateType = {
   items: loadFromStorage(),
-  isModal: false
+  isModal: false,
+  sortBrand: "none"
 };
 
 
@@ -76,9 +78,12 @@ const cartSlice = createSlice({
     },
     setIsModal: (state,action: PayloadAction<boolean>) =>{
       state.isModal = action.payload
+    },
+    setSortBrand: (state,action: PayloadAction<string>) =>{
+      state.sortBrand = action.payload
     }
   }
 });
 
-export const { addItem, removeItem, clearCart,setIsModal,incrementCount, decrementCount } = cartSlice.actions;
+export const { addItem, removeItem, clearCart,setIsModal,incrementCount, decrementCount, setSortBrand } = cartSlice.actions;
 export default cartSlice.reducer;

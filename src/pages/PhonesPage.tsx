@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
 import Container from '../components/Container';
+import classes from './PhonesPage.module.sass'
 import Shop from '../components/Shop';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchProduct } from '../redux/phoneSlice';
@@ -9,6 +10,8 @@ import { fetchAllProducts } from '../redux/phonesSlice';
 import type { RootState, AppDispatch } from '../redux/index';
 import { log } from 'console';
 import ModalPage from './ModalPage';
+import Loader from '../components/Loader';
+import { setSortBrand } from '../redux/cartSlice';
 
 
 type ProductType = {
@@ -23,6 +26,7 @@ type ProductType = {
 const PhonesPage = () => {
   const isModal = useSelector((state: RootState) => state.cart.isModal);
   const dispatch = useDispatch<AppDispatch>();
+  const sortBrand = useSelector((state: RootState) => state.cart.sortBrand);
   const { products, loading, error } = useSelector((state: RootState) => state.phones);
   useEffect(() => {
     dispatch(fetchAllProducts());
@@ -46,7 +50,23 @@ const PhonesPage = () => {
       {} as Record<string, boolean>))
     }
   }, [products]);
-
+ 
+  
+  useEffect(()=>{
+    console.log(sortBrand);
+    if(sortBrand!=="none"){
+      setBrand(prev => {
+        const updated = Object.fromEntries(
+          Object.entries(prev).map(([key, value]) => [
+            key,
+            key.toLowerCase() === sortBrand.toLowerCase() ? true : false
+          ])
+        );
+        return updated;
+      });
+    }
+  },[sortBrand,products])
+  console.log(brand);
   useEffect(() => {
     const filtered = products.filter(p => {
       const price = Number(p.price);
@@ -62,14 +82,14 @@ const PhonesPage = () => {
 
   
   return (
-    <>
+    <div className={classes.Wrapper}>
       <Header/>
         <Container>
-          {loading && <p>Загрузка...</p>}
+          {loading && <Loader/>}
 
           {!loading && error && <p>Ошибка загрузки товара</p>}
 
-          {!loading && products && (
+          {!loading && !error && products && (
             <>
               <Shop 
                 products={filteredProducts}
@@ -90,7 +110,7 @@ const PhonesPage = () => {
         :
         ""
       }
-    </>
+    </div>
   );
 };
 

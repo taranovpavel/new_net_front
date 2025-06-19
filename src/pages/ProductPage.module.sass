@@ -1,3 +1,12 @@
+@keyframes blur-fade-out
+  0%
+    filter: blur(8px)
+    opacity: 1
+  100%
+    filter: blur(0px)
+    opacity: 1
+.Wrapper
+  animation: blur-fade-out 0.8s ease-out forwards    
 .Main
   display: flex
   justify-content: space-between

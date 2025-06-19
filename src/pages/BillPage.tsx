@@ -73,7 +73,9 @@ const BillPage = () => {
       dispatch(notifyProduct(`${values.name}\n${values.phone}\n${values.email}\n${delivery}\n${payment}\n\nТовары \n\n${items.map((item)=>`${item.name}\n${item.memory}\n${item.color}\nКоличество: ${item.count}\n${(item.price*item.count).toLocaleString('ru-RU')} сом\n\n`)}Сумма заказа: ${allPrice.toLocaleString('ru-RU')} сом`));}
       setIsModal(true)
   };
-
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   return (
     <div className={classes.Wrapper}>
       <Container>

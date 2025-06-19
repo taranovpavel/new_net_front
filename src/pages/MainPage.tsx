@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import classes from './MainPage.module.sass'
 import Header from '../components/Header';
 import Container from '../components/Container';
@@ -52,7 +52,12 @@ const MainPage = () => {
       img: "https://purepng.com/public/uploads/large/purepng.com-gamepadgamepadgame-controlhandheld-controllervideo-games-controller-1701528353499nhgz5.png"
     },
   ]
-  dispatch(setSortBrand("none"))
+  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+    dispatch(setSortBrand("none"))
+  }, []);
+ 
   return (
     <div className={classes.Wrapper}>
       <Header/>

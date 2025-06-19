@@ -65,8 +65,10 @@ const PhonesPage = () => {
         return updated;
       });
     }
-  },[sortBrand,products])
-  console.log(brand);
+  },[sortBrand,products])  
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, []);
   useEffect(() => {
     const filtered = products.filter(p => {
       const price = Number(p.price);
